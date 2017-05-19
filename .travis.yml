@@ -6,7 +6,7 @@ services:
   - docker
 
 before_script:
-  - curl -fsSL https://goss.rocks/install | sh
+  - curl -fsSL https://goss.rocks/install | sudo sh
   
 install:
   - docker build -t zeroboh/php:7.1 .
