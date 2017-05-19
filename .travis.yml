@@ -5,8 +5,8 @@ language: generic
 services:
   - docker
 
-before_script:
-  - curl -fsSL https://goss.rocks/install | sudo sh
+before_script:  
+  - curl -L https://raw.githubusercontent.com/aelsabbahy/goss/master/extras/dgoss/dgoss -o /usr/local/bin/dgoss | sudo sh
   
 install:
   - docker build -t zeroboh/php:7.1 .
