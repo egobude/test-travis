@@ -7,7 +7,12 @@ services:
   
 install:
   - docker build -t zeroboh/php:7.1 .
+  - docker run -d --name php zeroboh/php:7.1
+
+script:
+  - docker ps | grep -q php
 
 after_success:
   - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
   - docker push zeroboh/php:7.1
+
